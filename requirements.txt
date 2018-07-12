@@ -7,6 +7,8 @@ chardet==3.0.4
 colorama==0.3.9
 decorator==4.3.0
 entrypoints==0.2.3
+gunicorn==19.9.0
+heroku==0.1.4
 html5lib==1.0.1
 idna==2.7
 ipykernel==4.8.2
@@ -35,7 +37,7 @@ pickleshare==0.7.4
 prompt-toolkit==1.0.15
 Pygments==2.2.0
 pylint==1.9.2
-python-dateutil==2.7.3
+python-dateutil==1.5
 pywinpty==0.5.4
 pyzmq==17.0.0
 qtconsole==4.3.1
