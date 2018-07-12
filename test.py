@@ -26,11 +26,12 @@ for imovel in lista_imoveis:
     print('Descrição: {}\n'.format(descricao))
     print('{}\n'.format(preco))   
   except: #PARA PÁGINAS COM STATUS 'EM OBRA'
-    descricao = bs_page.find('span', class_='descricao').text
-    preco = bs_page.find('span', class_='dados-ficha').text
+    # descricao = bs_page.find('span', class_='descricao').text
+    # preco = bs_page.find('span', class_='dados-ficha').text
 
-    print('Descrição: {}\n'.format(descricao))
-    print('{}\n'.format(preco)) 
+    # print('Descrição: {}\n'.format(descricao))
+    # print('{}\n'.format(preco)) 
+    pass
 
 
 
