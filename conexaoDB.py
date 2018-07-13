@@ -20,14 +20,17 @@ class ConexaoSQL:
     c.execute(sql)
     dados_imoveis = c.fetchall()
 
-    for imovel in dados_imoveis:
-      output = "Área: {}m². ".format(imovel[2])
-      if imovel[3] == 'None':
-        output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
-      else:
-        output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
+    if len(dados_imoveis) > 0:
+      for imovel in dados_imoveis:
+        output = "Área: {}m². ".format(imovel[2])
+        if imovel[3] == 'None':
+          output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
+        else:
+          output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
 
-      print(output)
+        print(output)
+    else:
+      print("Nenhum registro encontrado.")
 
   def filtrarMetragem(self, metragem):
     conn = self.getConexao()
@@ -36,14 +39,17 @@ class ConexaoSQL:
     c.execute(sql)
     dados_imoveis = c.fetchall()
 
-    for imovel in dados_imoveis:
-      output = "Área: {}m². ".format(imovel[2])
-      if imovel[3] == 'None':
-        output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
-      else:
-        output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
+    if len(dados_imoveis) > 0:
+      for imovel in dados_imoveis:
+        output = "Área: {}m². ".format(imovel[2])
+        if imovel[3] == 'None':
+          output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
+        else:
+          output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
 
-      print(output)
+        print(output)
+    else:
+      print("Nenhum registro encontrado.")
 
   def filtrarPredio(self, logradouro, numero):
     conn = self.getConexao()
@@ -52,11 +58,14 @@ class ConexaoSQL:
     c.execute(sql)
     dados_imoveis = c.fetchall()
 
-    for imovel in dados_imoveis:
-      output = "Área: {}m². ".format(imovel[2])
-      if imovel[3] == 'None':
-        output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
-      else:
-        output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
+    if len(dados_imoveis) > 0:
+      for imovel in dados_imoveis:
+        output = "Área: {}m². ".format(imovel[2])
+        if imovel[3] == 'None':
+          output = output + "Valor de Aluguel: R$ {0:2.2f}.".format(imovel[4])
+        else:
+          output = output + "Valor de Venda: R$ {0:2.2f}.".format(imovel[3])
 
-      print(output)
+        print(output)
+    else:
+      print("Nenhum registro encontrado.")

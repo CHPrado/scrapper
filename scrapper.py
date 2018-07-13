@@ -40,7 +40,7 @@ class ZapImoveis:
     print("Varrendo imóveis de Zap Imoveis...")
     #NAVEGA NA PÁGINA PRINCIPAL E COLETA AS URL DOS IMÓVEIS LISTADOS
     lista_imoveis = self.listarImoveis()
-    i = 0
+    qtd_imoveis = 0
     for imovel in lista_imoveis:
       bs_detalhe = self.detalhesImovel(imovel)
 
@@ -61,15 +61,16 @@ class ZapImoveis:
         bairro = endereco[4].upper()
         logradouro = endereco[5].upper()
         numero = endereco[6]
-        # id = endereco[7]
+        # id = int(endereco[7])
 
+        # print('ID: {}'.format(id))
         # print('Descrição: {}\n'.format(descricao))
         # print('Área : {}m², Preço Venda: {}, Preço Aluguel: {}'.format(area, precoVenda, precoAluguel))   
         # print('Logradouro: {}, nº: {}, Bairro: {}, Regiao: {}, Cidade: {}, Estado: {}\n\n'.format(logradouro, numero, bairro, regiao, cidade, estado))
 
         self.conn.inserirImovel(descricao, area, precoVenda, precoAluguel, pais, 
                                 estado, cidade, regiao, bairro, logradouro, numero)
-        i += 1
+        qtd_imoveis += 1
 
       except: #PARA PÁGINAS COM STATUS 'EM OBRA'. 
         pass
@@ -92,8 +93,7 @@ class ZapImoveis:
         # print('Área mínima: {}m², Área máxima: {}, Preço: {}'.format(areaMin, areaMax, preco))   
         # print('Logradouro: {}, nº: {}, Bairro: {}, Regiao: {}, Cidade: {}, Estado: {}\n\n'.format(logradouro, numero, bairro, regiao, cidade, estado))
 
-    print("Scrapper finalizado. {} imóveis adicionados no banco de dados.".format(i))
-    #return "Scrapper finalizado. {} imóveis adicionados no banco de dados.".format(i)
+    print("Scrapper finalizado. {} imóveis adicionados no banco de dados.".format(qtd_imoveis))
 
   def filtrarBairro(self):
     bairro = input("Informe o bairro: ")
@@ -110,7 +110,7 @@ class ZapImoveis:
 
   def iniciar(self):
     while True:
-      print("MENU\n"
+      print("\n===ZAP IMOVEIS SCRAPPER===\n"
         "1. Inicializar Scrapper.\n"
         "2. Filtrar por Metragem.\n"
         "3. Filtrar por Prédio.\n"
