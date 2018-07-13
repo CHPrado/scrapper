@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
   scrapper = ZapImoveis() 
-  return scrapper.navegar()
+  return scrapper.iniciar()
 
 if __name__ == '__main__':
   app.run(debug=True)
